@@ -7,14 +7,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/home")
 public class HomeController {
     @GetMapping    
     //@ResponseBody
     public ModelAndView index(){
-        //logica
-        var mensagem = "eu não acredito";
 
-        return new ModelAndView("home/index","apelido",mensagem);
+        return new ModelAndView("home/index");
     }
 }

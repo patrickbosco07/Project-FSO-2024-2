@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head th:include="layout :: htmlhead"></head>
+  <body>
+    <div
+      style="
+        width: 320px;
+        height: 318px;
+        position: absolute;
+        top: 297px;
+        left: 808px;
+      "
+    >
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control form-control-sm"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            Não vamos compartilhar seu e-mail com ninguém.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Senha</label>
+          <input
+            type="password"
+            class="form-control form-control-sm"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Salvar minha senha</label
+          >
+        </div>
+
+        <div class="mb-3">
+          <button type="button" class="btn btn-link">
+            Esqueci minha senha
+          </button>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="botaoEnvio">Entrar</button>
+        
+      </form>
+    </div>
+
+    <div style="width: 640px; height: 832px; background-color: #4ac62cc9">
+      <div
+        style="
+          position: absolute;
+          width: 372px;
+          height: 328px;
+          top: 245px;
+          left: 134px;
+          overflow: hidden;
+        "
+      >
+        <img
+          src="/images/Logo-Univille.png"
+          alt="Logo Univille"
+          style="
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Mantém a proporção da imagem */
+          "
+        />
+      </div>
+    </div>
+
+    <div th:if="${errorMessage}" class="alert alert-primary d-flex align-items-center" role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+      </svg>
+      <div th:text="${errorMessage}">
+        
+      </div>
+    </div>
+    <script th:src="@{/scriptcliente.js}"></script>
+  </body>
+</html>
