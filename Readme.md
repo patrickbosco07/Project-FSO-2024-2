@@ -1,24 +1,23 @@
-# Nome do projeto
+# Projeto de sistema de chamados
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/patrickbosco07/Project-FSO-2024-2?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/patrickbosco07/Project-FSO-2024-2?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/patrickbosco07/Project-FSO-2024-2?style=for-the-badge)
+![GitHub open issues](https://img.shields.io/github/issues/patrickbosco07/Project-FSO-2024-2?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="https://img.freepik.com/free-photo/website-hosting-concept-with-circuits_23-2149406782.jpg?t=st=1729694961~exp=1729698561~hmac=79adab5ba95fd441227f64abde059662096312e22bc48037b2e4b5290b20d4d9&w=1380" alt="Exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Este projeto tem como finalidade fazer um pequeno sistema de chamados de suporte, simulando os sistemas que algumas empresas usam. Ele está sendo feito localmente, mas tenho vontade de colocar on-line também.
 
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+- [x] Construir a tela de login
+- [x] Construir a tela de cadastro
+- [] Construir a lógica para encaminhar para a página de cadastro
+- [] Construir a lógica para receber o cadastro do usuário e encaminhar para a página inicial do sistema
+- [] Construir a tela inicial do sistema
 
 ## 💻 Pré-requisitos
 
