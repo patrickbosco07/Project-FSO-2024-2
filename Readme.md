@@ -15,7 +15,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [x] Construir a tela de login
 - [x] Construir a tela de cadastro
-- [] Construir a lógica para encaminhar para a página de cadastro
+- [x] Construir a lógica para encaminhar para a página de cadastro
 - [] Construir a lógica para receber o cadastro do usuário e encaminhar para a página inicial do sistema
 - [] Construir a tela inicial do sistema
 
