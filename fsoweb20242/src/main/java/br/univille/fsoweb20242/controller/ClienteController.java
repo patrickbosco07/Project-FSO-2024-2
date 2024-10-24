@@ -29,19 +29,13 @@ public class ClienteController {
                 "listaClientes",listaClientes);
     }
 
-    @GetMapping("/novo")
-    public ModelAndView novo(){
-        var cliente = new Cliente();
-        
-        return new ModelAndView("cliente/form", 
-                    "cliente",cliente);
+    @PostMapping("/novo")
+    public ModelAndView novo(Cliente cliente){
+        service.save(cliente);
+        return new ModelAndView("redirect:/login");
 
     }
-    @PostMapping
-    public ModelAndView save(Cliente cliente){
-        service.save(cliente);
-        return new ModelAndView("redirect:/clientes");
-    }
+    
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){
         var umCliente = service.getById(id);
