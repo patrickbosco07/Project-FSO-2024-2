@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
+import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,22 +18,34 @@ import jakarta.persistence.TemporalType;
 public class Chamado {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String categoria;
 
-    @Column(length = 1000)
+    @Column(length = 1000, nullable = false)
     private String descricao;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date dataAbertura;
+
+    private MultipartFile arquivo;
+
+    @Column(length = 100, nullable = false)
+    private String requerente;
 
     @Column(length = 100)
     private String status;
 
-    private MultipartFile arquivo;
+    public String getRequerente() {
+        return requerente;
+    }
+
+    public void setRequerente(String requerente) {
+        this.requerente = requerente;
+    }
 
     public long getId() {
         return id;
