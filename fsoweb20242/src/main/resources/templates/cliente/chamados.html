@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="layout :: htmlhead">
+</head>
+<body>
+    <nav th:replace="layout :: menu"></nav>
+
+    <div class="container text-center" th:each="item : ${listaDeItens}">
+        <div class="row">
+          <div class="col-md-6 offset-md-3" th:text="${item.categoria}">.col-md-6 .offset-md-3</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3" th:text="${item.descricao}">.col-md-6 .offset-md-3</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3" th:text="${item.dataAbertura}">.col-md-6 .offset-md-3</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3" th:text="${item.requerente}">.col-md-6 .offset-md-3</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3" th:text="${item.status
+          
+          
+          }">.col-md-6 .offset-md-3</div>
+        </div>
+      </div>
+
+    <div th:include="layout :: footer"></div>
+</body>
+</html>

@@ -26,6 +26,7 @@ public class ChamadoController {
                 "listaChamados",listaChamados);
     }
 
+    @SuppressWarnings("null")
     @GetMapping("/verificaranexo")
     public void index(Chamado chamado){
         var arquivo = chamado.getArquivo();
