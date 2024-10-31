@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head th:include="layout :: htmlhead">
 </head>
+
 <body>
-    <nav th:replace="layout :: menu"></nav>
+  <nav th:replace="layout :: menu"></nav>
 
-    <div class="container text-center" th:each="item : ${listaDeItens}">
-        <div class="row">
-          <div class="col-md-6 offset-md-3" th:text="${item.categoria}">.col-md-6 .offset-md-3</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 offset-md-3" th:text="${item.descricao}">.col-md-6 .offset-md-3</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 offset-md-3" th:text="${item.dataAbertura}">.col-md-6 .offset-md-3</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 offset-md-3" th:text="${item.requerente}">.col-md-6 .offset-md-3</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 offset-md-3" th:text="${item.status
-          
-          
-          }">.col-md-6 .offset-md-3</div>
-        </div>
-      </div>
+  <!--Quando clicar no botão de enviar chamado será chamada uma
+      função de JS que verifica o anexo e caso esteja válido conecta na URL que salva o chamado e direciona para a URL
+      de chamados-->
+  <a href="" class="btn btn-primary">Novo chamado</a>      
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Categoria</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Data de Abertura</th>
+        <th scope="col">Requerente</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="item : ${listaDeItens}">
+        <td th:text="${item.categoria}"></td>
+        <td th:text="${item.descricao}"></td>
+        <td th:text="${item.dataAbertura}"></td>
+        <td th:text="${item.requerente}"></td>
+        <td th:text="${item.status}"></td>
+      </tr>
+    </tbody>
+  </table>
 
-    <div th:include="layout :: footer"></div>
+  <div th:include="layout :: footer"></div>
 </body>
+
 </html>

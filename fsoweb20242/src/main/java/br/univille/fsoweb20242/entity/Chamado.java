@@ -1,5 +1,6 @@
 package br.univille.fsoweb20242.entity;
 
+import java.io.IOException;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,7 +32,17 @@ public class Chamado {
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date dataAbertura;
 
-    private MultipartFile arquivo;
+    @Column(name = "arquivo", columnDefinition = "LONGBLOB")
+    private byte[] arquivo;
+
+
+    public byte[] getArquivo() {
+        return arquivo;
+    }
+
+    public void setArquivo(MultipartFile arquivo) throws IOException {
+    this.arquivo = arquivo.getBytes();
+    }
 
     @Column(length = 100, nullable = false)
     private String requerente;
@@ -85,14 +96,6 @@ public class Chamado {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public MultipartFile getArquivo() {
-        return arquivo;
-    }
-
-    public void setArquivo(MultipartFile arquivo) {
-        this.arquivo = arquivo;
     }
 
     

@@ -10,4 +10,5 @@ public interface ChamadoService {
     Chamado save(Chamado chamado);
     Chamado delete(long Id);
     Chamado getById(long Id);
+    boolean checkAttach(Chamado chamado);
 }

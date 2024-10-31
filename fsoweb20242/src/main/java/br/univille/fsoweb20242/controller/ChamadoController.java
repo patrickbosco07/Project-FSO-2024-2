@@ -26,17 +26,10 @@ public class ChamadoController {
                 "listaChamados",listaChamados);
     }
 
-    @SuppressWarnings("null")
-    @GetMapping("/verificaranexo")
-    public void index(Chamado chamado){
-        var arquivo = chamado.getArquivo();
-        if (arquivo.getSize() > 1048576) {
-            throw new IllegalArgumentException("O arquivo deve ter no máximo 1MB");
-        }
-        if (!arquivo.getContentType().equals("image/png") && !arquivo.getContentType().equals("image/jpeg")) {
-            throw new IllegalArgumentException("Tipo de arquivo não permitido.");
-        }
+    @GetMapping("/novo")
+    public ModelAndView processar(Chamado chamado){
+        chamadoService.save(chamado);
+        return new ModelAndView("redirect:/chamados");
     }
-    
     
 }
