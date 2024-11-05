@@ -18,6 +18,12 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Construir a lógica para encaminhar para a página de cadastro
 - [] Construir a lógica para receber o cadastro do usuário e encaminhar para a página inicial do sistema
 - [] Construir a tela inicial do sistema
+- [x] Construir a tela de visualização de chamados
+- [] Criar tela de visualização de dados do usuário
+- [] Criar tela de cadastro de chamado
+- [] Criar a tela de alterar usuário
+- [] Criar opção de alterar chamado e usuário
+
 
 ## 💻 Pré-requisitos
 
