@@ -14,7 +14,7 @@ import br.univille.fsoweb20242.repository.ClienteRepository;
 import br.univille.fsoweb20242.service.ClienteService;
 
 @Controller
-@RequestMapping("/clientes")
+@RequestMapping("/perfil")
 public class ClienteController {
 
     @Autowired
@@ -23,10 +23,10 @@ public class ClienteController {
     @GetMapping
     public ModelAndView index(){
         //chamar o banco de dados e fazer um select * from tabela
-        var listaClientes = service.getAll();
+        var listaUsuario = service.getAll();
         //montar a tela com os dados banco
-        return new ModelAndView("cliente/index",
-                "listaClientes",listaClientes);
+        return new ModelAndView("cliente/perfil",
+                "listaUsuario",listaUsuario);
     }
 
     @PostMapping("/novo")
@@ -42,6 +42,8 @@ public class ClienteController {
         return new ModelAndView("cliente/form",
                 "cliente",umCliente);
     }
+
+
 
     
 }
