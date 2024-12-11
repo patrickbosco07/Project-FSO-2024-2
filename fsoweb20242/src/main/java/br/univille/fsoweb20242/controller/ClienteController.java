@@ -29,7 +29,7 @@ public class ClienteController {
                 "listaUsuario",listaUsuario);
     }
 
-    @PostMapping("/novo")
+    @PostMapping
     public ModelAndView novo(Cliente cliente){
         service.save(cliente);
         return new ModelAndView("redirect:/login");

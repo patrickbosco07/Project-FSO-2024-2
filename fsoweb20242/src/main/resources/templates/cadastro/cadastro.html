@@ -16,14 +16,14 @@
         top: 297px;
         left: 808px;
       ">
-    <form class="row g-3" th:action="@{/clientes/novo}" method="POST" th:object="${cliente}">
+    <form class="row g-3" th:action="@{/perfil}" method="POST" th:object="${cliente}">
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" th:field="*{email}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Senha</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="text" class="form-control" id="exampleFormControlInput2">
       </div>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -31,9 +31,7 @@
           Lembrar dados
         </label>
       </div>
-      <div class="col-12">
-        <a href="/cadastro" class="btn btn-primary">Cadastrar</a>
-      </div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
   </div>
 
@@ -46,7 +44,7 @@
             left: 134px;
             overflow: hidden;
           ">
-      <img src="/images/Logo-Univille.png" alt="Logo Univille" style="
+      <img src="/images/Logo-Sistema-Chamado.png" alt="Logo da Empresa" style="
               width: 100%;
               height: 100%;
               object-fit: contain; /* Mantém a proporção da imagem */
