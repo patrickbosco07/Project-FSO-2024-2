@@ -1,5 +1,7 @@
 package br.univille.fsoweb20242.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -29,12 +31,20 @@ public class ClienteController {
                 "listaUsuario",listaUsuario);
     }
 
+    @GetMapping("/novo")
+    public ModelAndView novo(){
+        var cliente = new Cliente();
+        HashMap<String,Object> dado = new HashMap<>();
+        dado.put("cliente", cliente);
+        return new ModelAndView("cadastro/cadastro",dado);
+    }
+
     @PostMapping
-    public ModelAndView novo(Cliente cliente){
+    public ModelAndView salvar(Cliente cliente){
         service.save(cliente);
         return new ModelAndView("redirect:/login");
-
     }
+
     
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){

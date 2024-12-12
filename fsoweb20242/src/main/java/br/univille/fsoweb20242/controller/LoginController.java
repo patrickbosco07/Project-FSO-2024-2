@@ -31,7 +31,7 @@ public class LoginController {
             modelAndView.setViewName("redirect:/home");
         } else {
             // Permanecer na mesma página e exibir uma mensagem de erro
-            modelAndView.setViewName("login/login"); // Substitua por sua página atual
+            modelAndView.setViewName("login/login");
             modelAndView.addObject("errorMessage", "Login incorreto!");
         }
         
