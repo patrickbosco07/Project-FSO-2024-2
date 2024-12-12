@@ -23,12 +23,11 @@ public class ClienteController {
     private ClienteService service;
 
     @GetMapping
-    public ModelAndView index(){
-        //chamar o banco de dados e fazer um select * from tabela
-        var listaUsuario = service.getAll();
-        //montar a tela com os dados banco
-        return new ModelAndView("cliente/perfil",
-                "listaUsuario",listaUsuario);
+    public ModelAndView visualizar(){
+        var cliente = service.getAll();
+        HashMap<String,Object> meuCliente = new HashMap<>();
+        meuCliente.put("meuCliente", cliente);
+        return new ModelAndView("cliente/perfil",meuCliente);
     }
 
     @GetMapping("/novo")
@@ -41,7 +40,7 @@ public class ClienteController {
 
     @PostMapping
     public ModelAndView salvar(Cliente cliente){
-        service.save(cliente);
+        service.save(cliente); 
         return new ModelAndView("redirect:/login");
     }
 

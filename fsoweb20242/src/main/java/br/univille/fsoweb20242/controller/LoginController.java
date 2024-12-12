@@ -1,12 +1,18 @@
 package br.univille.fsoweb20242.controller;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.univille.fsoweb20242.entity.Cliente;
 import br.univille.fsoweb20242.service.ClienteService;
+import ch.qos.logback.core.model.Model;
 
 @Controller
 @RequestMapping("/login")
@@ -20,10 +26,15 @@ public class LoginController {
         return new ModelAndView("login/login");
     }
 
+    @GetMapping("/autenticacao")
+    public ModelAndView autenticacao(Model model) {
+        List<Cliente> clientes = clienteService.getAll();
+        return new ModelAndView("login/login","listaCliente",clientes);
+    }
 
-    @GetMapping("/checagem")    
+    @GetMapping("/checagem/{id}")    
     //@ResponseBody
-    public ModelAndView login(long id){
+    public ModelAndView login(@PathVariable("id") long id){
         ModelAndView modelAndView = new ModelAndView();
         var umCliente = clienteService.logar(id);
         if (umCliente != null) {

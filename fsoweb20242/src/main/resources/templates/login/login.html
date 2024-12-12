@@ -16,7 +16,8 @@
         top: 297px;
         left: 808px;
       ">
-    <form>
+    <form class="row g-3">
+      <input type="hidden" th:field="*{id}">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
         <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -38,9 +39,9 @@
           Esqueci minha senha
         </button>
       </div>
-      <a href="/login/checagem">
-        <button type="submit" class="btn btn-primary" id="botaoEnvio">Entrar</button>
-      </a>
+      
+      <button class="btn btn-primary">Entrar</button>
+      
       <a href="/perfil/novo" class="btn btn-primary">Cadastrar</a>
 
     </form>
