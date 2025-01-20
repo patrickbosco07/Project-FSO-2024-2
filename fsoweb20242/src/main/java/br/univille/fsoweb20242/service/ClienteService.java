@@ -9,4 +9,5 @@ public interface ClienteService {
     Cliente delete(long id);
     Cliente getById(long id);
     Cliente logar(long id);
+    Cliente update(Cliente cliente);
 }
